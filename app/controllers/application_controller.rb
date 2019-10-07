@@ -6,14 +6,16 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "secret"
     use Rack::Flash, :sweep => true
   end
 
-  get "/" do
-    erb :index
+  get '/' do
+    erb :'/users/login'
   end
 
-  helper_methods do
+  helpers do
     def logged_in?
       !!session[:user_id]
     end
