@@ -1,6 +1,7 @@
-ENV['SINATRA_ENV'] ||= "development"
+ENV['SINATRA_ENV'] ||= "development"  #database folder with empty migrations folder.
 
 require 'bundler/setup'
+require 'rack-flash'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.establish_connection(
