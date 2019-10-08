@@ -40,4 +40,14 @@ class PostsController < ApplicationController
         current_user.save
     end
 
+    get '/posts/:id' do
+        if logged_in?
+            @post = Post.find_by_id(params[:id])
+            erb :'/posts/show'
+        else 
+            flash[:error] = "You must be logged in to view posts."
+            redirect '/login'
+        end
+    end
+
 end
