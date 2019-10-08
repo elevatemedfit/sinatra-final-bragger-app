@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-    extend Slugify::ClassMethods
-    include Slugify::InstanceMethods
+    extend Slugifiable::ClassMethods
+    include Slugifiable::InstanceMethods
 
 has_secure_password #allows us to use bcrypt.
 

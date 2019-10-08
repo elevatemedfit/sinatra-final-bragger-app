@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 
-    extend Slugify::ClassMethods
-    include Slugify::InstanceMethods
+    extend Slugifiable::ClassMethods
+    include Slugifiable::InstanceMethods
 
     belongs_to :user
 
