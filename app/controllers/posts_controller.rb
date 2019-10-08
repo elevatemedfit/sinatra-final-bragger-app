@@ -74,4 +74,15 @@ class PostsController < ApplicationController
         end
     end
 
+    delete '/posts/:id/delete' do
+        if logged_in?
+            @post = Post.find_by_id(params[:id])
+            if @post.user == current_user then @post.delete else redirect '/login' end
+        else 
+            flash[:error] = "You must be logged in."
+            redirect '/login'
+        end
+        redirect '/posts'
+    end
+
 end
