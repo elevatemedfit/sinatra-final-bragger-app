@@ -50,4 +50,14 @@ class PostsController < ApplicationController
         end
     end
 
+    get '/posts/:id/edit' do 
+        @post = Post.find_by_id(params[:id])
+        if logged_in? && current_user.posts.include?(@post)
+            erb :'/posts/edit'
+        else 
+            flash[:error] = "You must be logged in to edit a post."
+            redirect '/login'
+        end
+    end
+
 end
