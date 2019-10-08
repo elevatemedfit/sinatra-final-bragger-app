@@ -16,6 +16,27 @@
   <body>
     <div class="wrapper">
 
+    <% if logged_in? %>
+      <h1> Bragger </h1>
+      <ul>
+        <li><a href="/posts"> Home </a></li>
+        <li><a href="/user/<%=current_user.slug%>"> Your Posts </a></li>
+        <li><a href="/posts/new"> Create Post </a></li>
+        <li><a href="/logout"> Log Out </a></li>
+      </ul>
+      <% else %>
+      <br>
+      <div style="border: 1px solid black">Elevate Medical Fitness</div>
+      <br>
+      <h1> Bragger </h1>
+      <br>
+      <br>
+      <ul>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login"> Log In </a></li>
+      </ul>
+      <%end %>
+
         <%= yield %>
 
       <footer class="branding">
