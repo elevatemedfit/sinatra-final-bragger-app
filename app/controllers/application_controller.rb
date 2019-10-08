@@ -6,13 +6,13 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    enable :sessions
-    set :session_secret, "secret"
+    enable :sessions #Allows movement once logged in.
+    set :session_secret, "secret" #extra layer of security.
     use Rack::Flash, :sweep => true
   end
 
   get '/' do
-    erb :'users/login'
+    erb :index
   end
 
   helpers do
