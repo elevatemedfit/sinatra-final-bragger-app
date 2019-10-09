@@ -1,3 +1,30 @@
-<form>
-<p>Posts Index Test</p>
-    </form>
+<h2>Hello <%=current_user.username.capitalize %>!<i> See what everyone has been up to!</i></h2>
+<br>
+
+
+<% @posts.each do |p| %>
+
+
+    <br>
+    <br>
+    
+    <p>Step Count: <%=p.step_count%><i> Steps</i></p>
+    <p>Cardio Score: <%=p.cardio_score%><i> Calories</i></p>
+    <p>Caloric Burn: <%=p.caloric_burn%><i> Calories/Hour</i></p>
+    <p>Walking Distance: <%=p.walking_distance%><i> Miles</i></p>
+    <p>Content: <%=p.content%></p>
+   
+    
+        <%if current_user.posts.include?(p)%>
+         <form method="post" action="/posts/<%=p.id%>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Post">
+        </form>
+
+        <form method="get" action="/posts/<%=p.id%>/edit">
+            <input type="submit" value="Edit Post">
+        </form>
+        <%end%>
+    
+<%end%>
+

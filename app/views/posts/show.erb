@@ -1,3 +1,21 @@
-<form>
-    <p>Post Show Test</p>
-</form>
+<h2>Check out these Braggarts...</h2>
+
+<p>Step Count: <%=@post.step_count%><i> Steps</i></p>
+<p>Cardio Score: <%=@post.cardio_score%><i> Calories</i></p>
+<p>Caloric Burn: <%=@post.caloric_burn%><i> Calories/Hour</i></p>
+<p>Walking Distance: <%=@post.walking_distance%><i> Miles</i></p>
+<p>Content: <%=@post.content%></p>
+</div>
+
+ <%if current_user.posts.include?(@post)%>
+         <form method="post" action="/posts/<%=@post.id%>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Post">
+        </form>
+
+        <form method="get" action="/posts/<%=@post.id%>/edit">
+            <input type="submit" value="Edit Post">
+        </form>
+<%end%>
+</div>
+
