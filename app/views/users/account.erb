@@ -1,18 +1,19 @@
 <h2>Hi <%=current_user.username.capitalize %>!</h2>
 <h4> Tell us About Your Day! </h4>
 <br>
-
+<div class='post_card'>
 <% @user.posts.each do |p|%>
-
+<h3 class='post_name'><%= p.name %></h3>
+<img class='post_img' src='<%=p.image_url%>'  height="50" width="50">
 <br>
 <br>
-
+<div class='post_info'>
 <p>Step Count: <%=p.step_count%></p>
 <p>Cardio Score: <%=p.cardio_score%></p>
 <p>Caloric Burn: <%=p.caloric_burn%></p>
 <p>Walking Distance: <%=p.walking_distance%></p>
 <p>Content: <%=p.content%></p>
-
+</div>
 <form method="post" action="/posts/<%=p.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Post">
@@ -21,7 +22,7 @@
 <form method="get" action="/posts/<%=p.id%>/edit">
   <input type="submit" value="Edit Post">
 </form>
-
+</div>
 
 <%end%>
 

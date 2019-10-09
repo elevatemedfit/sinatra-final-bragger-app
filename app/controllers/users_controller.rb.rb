@@ -1,4 +1,5 @@
 class UsersController < ApplicationController #inherit from AC, any methods in AC will be available across all controllers.
+    
     get '/signup' do
         !logged_in? ? (erb :'/users/signup') : (redirect "/") #if user is logged in goto erb else redirect.
     end

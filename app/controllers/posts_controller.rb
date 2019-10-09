@@ -66,7 +66,7 @@ class PostsController < ApplicationController
             flash[:error] = "All fields must be filled in"
             redirect "/posts/#{@post.id}/edit"
         elsif logged_in? && !params.empty? && current_user.posts.include?(@post)
-            @post.update(content: params[:content], step_count: params[:step_count], cardio_score: params[:cardio_score], caloric_burn: params[:caloric_burn], walking_distance: params[:walking_distance])
+            @post.update(content: params[:content], step_count: params[:step_count], cardio_score: params[:cardio_score], caloric_burn: params[:caloric_burn], walking_distance: params[:walking_distance], image_url: "google.com")
             @post.save
             redirect "/posts/#{@post.id}"
         else 
