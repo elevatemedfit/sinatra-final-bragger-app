@@ -4,16 +4,19 @@
 
 <% @posts.each do |p| %>
 
-
+<div class='post_card'>
+    <h4><a class='' href='/posts/<%=p.id%>'><%=p.name%></a></h4>
+    <br>
+    <img class='post_img' src='<%=p.image_url%>' height="100" width="100">
     <br>
     <br>
-   
+   <div class='post_info'>
     <p>Step Count: <%=p.step_count%><i> Steps</i></p>
     <p>Cardio Score: <%=p.cardio_score%><i> Calories</i></p>
     <p>Caloric Burn: <%=p.caloric_burn%><i> Calories/Hour</i></p>
     <p>Walking Distance: <%=p.walking_distance%><i> Miles</i></p>
     <p>Content: <%=p.content%></p>
-   
+   </div>
     
         <%if current_user.posts.include?(p)%>
          <form method="post" action="/posts/<%=p.id%>/delete">
@@ -25,6 +28,6 @@
             <input type="submit" value="Edit Post">
         </form>
         <%end%>
-    
+    </div>
 <%end%>
 
