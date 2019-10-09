@@ -1,3 +1,28 @@
-<form>
-    <p>User Account Test</p>
+<h2>Hi <%=current_user.username.capitalize %>!</h2>
+<h4> Tell us About Your Day! </h4>
+<br>
+
+<% @user.posts.each do |p|%>
+
+<br>
+<br>
+
+<p>Step Count: <%=p.step_count%></p>
+<p>Step Count: <%=p.step_count%></p>
+<p>Cardio Score: <%=p.cardio_score%></p>
+<p>Caloric Burn: <%=p.caloric_burn%></p>
+<p>Walking Distance: <%=p.walking_distance%></p>
+<p>Content: <%=p.content%></p>
+
+<form method="post" action="/posts/<%=p.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Post">
 </form>
+
+<form method="get" action="/posts/<%=p.id%>/edit">
+  <input type="submit" value="Edit Post">
+</form>
+
+
+<%end%>
+
