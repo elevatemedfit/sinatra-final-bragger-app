@@ -30,6 +30,15 @@
     width: 85%;
   }
 
+  img.post_img {
+    border: 1px solid rgb(66, 66, 66);
+  }
+
+  .post_info p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10pt;
+  }
+
   h1 {
     font-size: 36px;
     line-height: 54px;
