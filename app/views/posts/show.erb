@@ -1,12 +1,15 @@
 <h2>Check out these Braggarts...</h2>
 
-<p>Step Count: <%=@post.step_count%><i> Steps</i></p>
-<p>Cardio Score: <%=@post.cardio_score%><i> Calories</i></p>
-<p>Caloric Burn: <%=@post.caloric_burn%><i> Calories/Hour</i></p>
-<p>Walking Distance: <%=@post.walking_distance%><i> Miles</i></p>
-<p>Content: <%=@post.content%></p>
-</div>
+<h3><%=@post.name%> Says...</h3>
+<br>
 
+<p>Step Count: <%=@post.step_count%></p>
+<p>Cardio Score: <%=@post.cardio_score%></p>
+<p>Caloric Burn: <%=@post.caloric_burn%></p>
+<p>Walking Distance: <%=@post.walking_distance%></p>
+<p>Content: <%=@post.content%></p>
+
+<small>Created by: <%=@post.user.username%></small>
  <%if current_user.posts.include?(@post)%>
          <form method="post" action="/posts/<%=@post.id%>/delete">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
@@ -17,5 +20,3 @@
             <input type="submit" value="Edit Post">
         </form>
 <%end%>
-</div>
-

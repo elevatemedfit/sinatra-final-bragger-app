@@ -2,13 +2,13 @@
 <p>Edit your Post Below:</p>
 <form action="/posts/<%=@post.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-    <p>Name: <input type="text" name="name" placeholder='<%=@post.name%>'></p>
-    <p>Image URL: <input type="text" name="image_url" placeholder='<%=@post.image_url%>'></p>   
     <p>Step Count: <input type="text" name="step_count" placeholder='<%=@post.step_count%>'></p>
     <p>Cardio Score: <input type="text" name="cardio_score" placeholder='<%=@post.cardio_score%>'></p>
-    <p>Step Count: <input type="text" name="step_count" placeholder='<%=@post.step_count%>'></p>
+    <p>Caloric Burn: <input type="text" name="caloric_burn" placeholder='<%=@post.caloric_burn%>'></p>
     <p>Walking Distance: <input type="text" name="walking_distance" placeholder='<%=@post.walking_distance%>'></p>
     <p>Content: </p>
     <textarea name="content" value='content'rows="10" cols="30" placeholder='<%=@post.content%>'></textarea>
     <br>
   <input type="submit" value="submit">
+  
+

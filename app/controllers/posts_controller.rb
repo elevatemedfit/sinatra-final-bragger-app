@@ -26,7 +26,7 @@ class PostsController < ApplicationController
             flash[:error] = "All fields must be filled in"
             redirect '/posts/new'
         elsif logged_in? && !params.empty?
-            @post = current_user.posts.create(name: params[:name], user_id: params[:user_id], content: params[:content], image_url: params[:image_url], step_count: params[:step_count], cardio_score: params[:cardio_score], caloric_burn: params[:caloric_burn], walking_distance: params[:walking_distance])
+            @post = current_user.posts.create(name: params[:name], content: params[:content], image_url: params[:image_url], step_count: params[:step_count], cardio_score: params[:cardio_score], caloric_burn: params[:caloric_burn], walking_distance: params[:walking_distance])
             if @post.save
                 redirect "/posts/#{@post.id}"
             else
@@ -66,7 +66,8 @@ class PostsController < ApplicationController
             flash[:error] = "All fields must be filled in"
             redirect "/posts/#{@post.id}/edit"
         elsif logged_in? && !params.empty? && current_user.posts.include?(@post)
-            @post.update(name: params[:name], user_id: params[:user_id], content: params[:content], image_url: params[:image_url], step_count: params[:step_count], cardio_score: params[:cardio_score], caloric_burn: params[:caloric_burn], walking_distance: params[:walking_distance])
+            @post.update(content: params[:content], step_count: params[:step_count], cardio_score: params[:cardio_score], caloric_burn: params[:caloric_burn], walking_distance: params[:walking_distance])
+            @post.save
             redirect "/posts/#{@post.id}"
         else 
             flash[:error] = "You must be logged in."
