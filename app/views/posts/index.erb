@@ -2,12 +2,12 @@
 <br>
 
 
-<% @posts.each do |p| %>
-
+    <% @posts.each do |p| %>
 <div class='post_card'>
+
     <h4><a class='' href='/posts/<%=p.id%>'><%=p.name%></a></h4>
     <br>
-    <img class='post_img' src='<%=p.image_url%>' height="100" width="100">
+    <img class='post_img' src='<%=p.image_url%>' height="125" width="125">
     <br>
     <br>
    <div class='post_info'>

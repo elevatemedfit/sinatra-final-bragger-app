@@ -8,5 +8,6 @@ end
 use Rack::MethodOverride #allows us to send delete and patch requests.
 use UsersController
 use PostsController
+use SessionsController
 use Rack::Flash
 run ApplicationController
