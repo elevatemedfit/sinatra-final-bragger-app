@@ -22,21 +22,30 @@
       <h1> Bragger </h1>
       <ul>
         <li><a href="/posts"> Home </a></li>
+        <br>
         <li><a href="/user/<%=current_user.slug%>"> Your Posts </a></li>
+        <br>
         <li><a href="/posts/new"> Create Post </a></li>
+        <br>
         <li><a href="/logout"> Log Out </a></li>
+        <br>
       </ul>
       <% else %>
+      <div class="wrapper">
+      <div class="container"></div> 
       <br>
-      <div style="border: 1px solid black">Elevate Medical Fitness</div>
+      <div style="border: 1px solid black">Elevate Medical Fitness</div> 
       <br>
       <h1> Bragger </h1>
       <br>
       <br>
       <ul>
         <li><a href="/signup">Sign Up</a></li>
+        <br>
         <li><a href="/login"> Log In </a></li>
       </ul>
+      <br>
+      <br>
       <%end %>
 
         <%= yield %>
