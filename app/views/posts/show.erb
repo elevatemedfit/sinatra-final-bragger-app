@@ -1,6 +1,6 @@
 <br>
 <br>
-<h2>See What <%=@post.name.capitalize%>...Says</h2>
+<h2>See What <%=@post.name.capitalize%>...Has to say!</h2>
 <div class='post_show'>
 <%# <h3 class='post_name'><%=@post.name</h3>  %>
 <br>
@@ -12,7 +12,7 @@
 <p>Cardio Score: <%=@post.cardio_score%></p>
 <p>Caloric Burn: <%=@post.caloric_burn%></p>
 <p>Walking Distance: <%=@post.walking_distance%></p>
-<p>Content: <i><%=@post.content%></i></p>
+<p>Post:  <i><%=@post.content%></i></p>
 </div>
 
  <%if current_user.posts.include?(@post)%>

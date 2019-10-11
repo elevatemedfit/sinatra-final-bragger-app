@@ -1,10 +1,9 @@
 
 <div class="container"></div>
     <div class ='header'>
-<h2>Hello <%=current_user.username.capitalize %>!<i> See what everyone has been up to!</i></h2>
+<h2>Hello <%=current_user.username.capitalize %>!</h2>
+<h4>Take a look at what everyone has been up to. Click on a members name to read their post.</h4>
 <br>
-
-
     <% @posts.each do |p| %>
 <div class='post_card'>
 
@@ -18,7 +17,7 @@
     <p>Cardio Score: <%=p.cardio_score%></p>
     <p>Caloric Burn: <%=p.caloric_burn%></p>
     <p>Walking Distance: <%=p.walking_distance%></p>
-    <p>Content: <%=p.content%></p>
+    <p><i>Click on name to see more post information.</i></p>
    </div>
     
         <%if current_user.posts.include?(p)%>
