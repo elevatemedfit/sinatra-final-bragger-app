@@ -1,6 +1,7 @@
-# The Bragger Application is a site where individuals participating in a medically-based fitness program, that utilizes fitness trackers as part of their clinical intervention, can post their daily results for others to see. The application allows individuals to input a picture along with their tracker data. 
+# The Bragger Application 
+is a site where individuals participating in a medically-based fitness program, that utilizes fitness trackers as part of their clinical intervention, can post their daily results for others to see. The application allows individuals to input a picture along with their tracker data. 
 
-# The application is meant to enhance participant performance through social interaction.
+The application is meant to enhance participant performance through social interaction.
 
 # Program Usage:
 Clone the repository and `bundle` to install the required gems. Run `rake db:migrate` and then `rake db:seed` to load stored users and posts to the database. Run `shotgun` to preview Bragger and add your own information.
